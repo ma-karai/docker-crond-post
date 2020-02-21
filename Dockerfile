@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:latest
 
 #add curl for better handling
 RUN apk add --no-cache curl
