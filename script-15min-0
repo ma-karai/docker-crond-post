@@ -1,4 +1,4 @@
 #!/bin/sh
 now=$(date +"%T")
 echo "$now - Billboard Top 100 updated" >> /tmp/deezerupdates
-wget --post-data 'url=https://www.deezer.com/en/playlist/5158987484&quality=flac' http://192.168.0.104:1730/api/download/?
+wget --post-data 'url=https://www.deezer.com/en/playlist/5158987484&quality=flac' http://192.168.0.104:1732/api/download/?
