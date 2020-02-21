@@ -8,8 +8,8 @@ FROM alpine:3.5
 #COPY script-hourly-0 /etc/periodic/hourly/hourly
 
 #every day
-COPY script-daily-0 /etc/periodic/daily/script-daily-0 
-RUN chmod +x /etc/periodic/daily/script-daily-0 
+COPY script-daily-0 /etc/periodic/daily/daily-0 
+RUN chmod +x /etc/periodic/daily/daily-0 
 
 #every week
 #COPY script-weekly-0 /etc/periodic/weekly/script-weekly-0
