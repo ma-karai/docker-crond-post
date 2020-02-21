@@ -1,4 +1,20 @@
 #!/bin/sh
 now=$(date +%F_%T)
-echo "$now - Billboard Top 100 updated" >> /tmp/deezerupdates
-wget --post-data 'url=https://www.deezer.com/en/playlist/5158987484&quality=flac' http://192.168.0.104:1732/api/download/?
+echo "$now - weekly lists updated" >> /tmp/deezerupdates
+
+generate_post_data()
+{
+  cat <<EOF
+{
+  "quality": "flac",
+  "url": ["https://www.deezer.com/en/playlist/5158987484",
+          "https://www.deezer.com/en/playlist/1043463931"]
+}
+EOF
+}
+
+curl -X POST -H "Content-Type: application/json" \
+ -d "$(generate_post_data)" \
+ http://192.168.0.104:1732/api/download/
+
+#wget --post-data 'url=https://www.deezer.com/en/playlist/5158987484&quality=flac' http://192.168.0.104:1732/api/download/?
