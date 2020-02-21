@@ -21,7 +21,7 @@ RUN chmod +x /etc/periodic/daily/daily-0
 #COPY script-monthly-0 /etc/periodic/monthly
 
 #add fridays to standard busybox
-RUN MKDIR /etc/periodic/friday
+RUN mkdir -p /etc/periodic/friday
 COPY friday-0 /etc/periodic/friday/friday-0
 RUN chmod +x /etc/periodic/friday/friday-0
 
