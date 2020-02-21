@@ -1,5 +1,7 @@
 FROM alpine:3.5
 
+#add curl for better handling
+RUN apk add --no-cache curl
 
 #every 15mins
 #COPY script-15min-0 /etc/periodic/15min/15min
@@ -8,7 +10,7 @@ FROM alpine:3.5
 #COPY script-hourly-0 /etc/periodic/hourly/hourly
 
 #every day
-COPY script-daily-0 /etc/periodic/daily/daily-0 
+COPY daily-0 /etc/periodic/daily/daily-0 
 RUN chmod +x /etc/periodic/daily/daily-0 
 
 #every week
