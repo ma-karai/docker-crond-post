@@ -1,0 +1,2 @@
+#!/bin/sh
+echo "every 15 minutes" >> /dev/stdout
